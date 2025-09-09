@@ -4,6 +4,9 @@
 #include "ofxGui.h"
 #include "ofxOpenCv.h"
 
+// Include the OpenCV face module
+#include "opencv2/face.hpp"
+
 // A simple struct for our game targets
 struct Target {
 	ofVec2f pos;
@@ -14,10 +17,11 @@ struct Target {
 // A struct to hold data for each enrolled player
 struct Player {
 	int id;
-	ofImage mugshot; // The captured mugshot image
-	ofImage emoji; // The emoji they need to imitate
+	ofImage mugshot;
+	ofImage emoji;
 	ofVec2f smoothedPos;
 	int score = 0;
+	vector<ofVec2f> landmarks; // To store the player's facial landmarks
 };
 
 // Enum to manage the game's flow
@@ -41,13 +45,16 @@ public:
 	ofxCvGrayscaleImage grayImg;
 	ofxCvHaarFinder haarFinder;
 
+	// --- NEW: Facemark object ---
+	cv::Ptr<cv::face::Facemark> facemark;
+
 	// Game objects
 	vector<Player> players;
 	vector<Target> targets;
 	float targetSpawnTimer = 0;
-	int activePlayer = 0; // 0 for Player 1, 1 for Player 2
+	int activePlayer = 0;
 
-	// --- UI and State Management ---
+	// UI and State Management
 	GameState currentState = ENROLL_P1_AIM;
 	ofTrueTypeFont titleFont;
 	ofTrueTypeFont bodyFont;
