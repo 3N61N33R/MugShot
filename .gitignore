@@ -1,41 +1,98 @@
-# Prerequisites
+# ========================
+# Generic C/C++ build files
+# ========================
 *.d
-
-# Compiled Object files
 *.slo
 *.lo
 *.o
 *.obj
-
-# Precompiled Headers
 *.gch
 *.pch
-
-# Linker files
 *.ilk
-
-# Debugger Files
 *.pdb
-
-# Compiled Dynamic libraries
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
 *.mod
 *.smod
-
-# Compiled Static libraries
 *.lai
 *.la
 *.a
 *.lib
-
-# Executables
 *.exe
 *.out
 *.app
-
-# debug information files
 *.dwo
+
+# ========================
+# Visual Studio
+# ========================
+.vs/
+*.VC.db
+*.VC.VC.opendb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+[Bb]uild/
+[Dd]ebug*/
+[Rr]elease*/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+*.ipch
+*.iobj
+*.ipdb
+
+# ========================
+# Visual Studio Code
+# ========================
+.vscode/
+.history/
+*.code-workspace
+
+# ========================
+# Xcode (macOS / iOS)
+# ========================
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.xcworkspace
+*.xcuserdatad
+*.xcsettings
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+DerivedData/
+build/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+
+# ========================
+# OpenFrameworks
+# ========================
+bin/
+obj/
+export/
+apps/**/Makefile
+apps/**/config.make
+apps/**/obj/
+apps/**/bin/
+apps/**/export/
+apps/**/release/
+
+# ========================
+# Logs and caches
+# ========================
+*.log
+*.cache
+*.tmp
+
+# ========================
+# OS-specific junk
+# ========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
