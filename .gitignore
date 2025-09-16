@@ -69,6 +69,8 @@ build/
 *.pbxuser
 *.mode1v3
 *.mode2v3
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
 
 # ========================
 # OpenFrameworks
@@ -96,3 +98,8 @@ apps/**/release/
 .DS_Store
 Thumbs.db
 ehthumbs.db
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
